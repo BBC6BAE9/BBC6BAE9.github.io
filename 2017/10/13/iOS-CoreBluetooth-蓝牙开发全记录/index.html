@@ -8,18 +8,18 @@
   
   <title>iOS CoreBluetooth 蓝牙开发全记录 | huanghong的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。">
+  <meta name="description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。 项目简介主要做的是飞镖靶子和手机App之间的数据互联，比想像的要简单很多。主要使用的框架是Corebluetooth，苹果在IOS 6系统之后开始支持BLE 4.0,iPhone4s,iPod 5,iPad 3等之后的机型开始内嵌BLE4.0硬件。 使用上并不困难，主要是弄清楚各名词的概念: 中心（c">
 <meta name="keywords" content="硬件开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS CoreBluetooth 蓝牙开发全记录">
 <meta property="og:url" content="http://yoursite.com/2017/10/13/iOS-CoreBluetooth-蓝牙开发全记录/index.html">
 <meta property="og:site_name" content="huanghong的个人博客">
-<meta property="og:description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。">
+<meta property="og:description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。 项目简介主要做的是飞镖靶子和手机App之间的数据互联，比想像的要简单很多。主要使用的框架是Corebluetooth，苹果在IOS 6系统之后开始支持BLE 4.0,iPhone4s,iPod 5,iPad 3等之后的机型开始内嵌BLE4.0硬件。 使用上并不困难，主要是弄清楚各名词的概念: 中心（c">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/0060lm7Tly1fkgo59b4rpj30go09e753.jpg">
-<meta property="og:updated_time" content="2017-10-13T07:53:54.084Z">
+<meta property="og:updated_time" content="2017-10-13T11:07:30.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS CoreBluetooth 蓝牙开发全记录">
-<meta name="twitter:description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。">
+<meta name="twitter:description" content="也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。 项目简介主要做的是飞镖靶子和手机App之间的数据互联，比想像的要简单很多。主要使用的框架是Corebluetooth，苹果在IOS 6系统之后开始支持BLE 4.0,iPhone4s,iPod 5,iPad 3等之后的机型开始内嵌BLE4.0硬件。 使用上并不困难，主要是弄清楚各名词的概念: 中心（c">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/0060lm7Tly1fkgo59b4rpj30go09e753.jpg">
   
     <link rel="alternate" href="/atom.xml" title="huanghong的个人博客" type="application/atom+xml">
@@ -157,6 +157,12 @@
         <div class="content" style="overflow: auto">
             <p><img src="http://ww2.sinaimg.cn/large/0060lm7Tly1fkgo59b4rpj30go09e753.jpg" alt="8xbrt.jpg"></p>
 <p>也是巧了，最近自己在做的一个项目和公司的项目都用到了蓝牙，我觉得还挺有意思的，在这里分享一下。</p>
+<p>项目简介<br>主要做的是飞镖靶子和手机App之间的数据互联，比想像的要简单很多。主要使用的框架是Corebluetooth，苹果在IOS 6系统之后开始支持<em>BLE</em> 4.0,<em>iPhone4s</em>,iPod 5,iPad 3等之后的机型开始内嵌<em>BLE</em>4.0硬件。</p>
+<p>使用上并不困难，主要是弄清楚各名词的概念:</p>
+<p>中心（central）和外设（peripheral）</p>
+<p>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类。我们的项目中是将手机作为中心，飞镖靶作为外部设备（peripheral）。</p>
+<p>服务（service）和特征（characteristic）</p>
+<p>每个蓝牙4.0设备都包含一个或者多个服务（实际操作的时候有的蓝牙是没有服务的，估计应该是4.0之前的设备），而每个服务下面又有多个特征值，特征值是与外界交互的最小变量，有的特征是用来记录蓝牙设备信息的，有的是用来收发数据的。未完待续……</p>
 
         </div>
         <div class="post-reply">
