@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html class="full-height">
+<html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
   <title>Core Bluetooth Programming Guide - Introduction 官方文档翻译 | huanghong的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,130 +26,68 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/common.css">
-<link rel="stylesheet" href="/css/nav.css">
-<link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
 
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">bbc6bae9</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/about">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/about">
-                About
-            </a>
-            
-        </div>
-    </nav>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">huanghong的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
   </div>
 </header>
+      <div class="outer">
+        <section id="main"><article id="post-1. Core Bluetooth Programming Guide - Introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/13/1. Core Bluetooth Programming Guide - Introduction/" class="article-date">
+  <time datetime="2017-10-13T04:27:30.424Z" itemprop="datePublished">2017-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Core Bluetooth Programming Guide - Introduction 官方文档翻译
+    </h1>
+  
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <!--博文页面-->
-
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
-    }
-
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
-    }
-
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
-    }
-</style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>Core Bluetooth Programming Guide - Introduction 官方文档翻译</strong>
-            </h1>
-            
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="http://ww3.sinaimg.cn/large/0060lm7Tly1fkgo7qm6kmj30cs0cswm1.jpg">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> bbc6bae9</span>
-                <span class="post-date sub-title">at: 2017-10-13</span>
-            </div>
-            
-                <div>
-                    
-                </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            <h1 id="关于-Core-Bluetooth"><a href="#关于-Core-Bluetooth" class="headerlink" title="关于 Core Bluetooth"></a>关于 Core Bluetooth</h1><p>想要实现iOS和Mac应用与其他配备了低功耗蓝牙(BLE)设备之间的无线通讯，可以使用Core Blue框架提供了许多类。例如，你的应用可以发现设备，浏览设备，与设备交互，例如一些心率监测的设备和温度调节器，在macOS 10.9，iOS6以上的Mac和iOS设备（设备本身必须是蓝牙4.0模块）也可以作为外设（peripherals），为其他设备提供数据，当然这些设备也包括Mac和iOS设备。</p>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="关于-Core-Bluetooth"><a href="#关于-Core-Bluetooth" class="headerlink" title="关于 Core Bluetooth"></a>关于 Core Bluetooth</h1><p>想要实现iOS和Mac应用与其他配备了低功耗蓝牙(BLE)设备之间的无线通讯，可以使用Core Blue框架提供了许多类。例如，你的应用可以发现设备，浏览设备，与设备交互，例如一些心率监测的设备和温度调节器，在macOS 10.9，iOS6以上的Mac和iOS设备（设备本身必须是蓝牙4.0模块）也可以作为外设（peripherals），为其他设备提供数据，当然这些设备也包括Mac和iOS设备。</p>
 <p><img src="http://ww2.sinaimg.cn/large/0060lm7Tly1fkk6pk2oicj30ns088jrt.jpg" alt="8xbrt.jpg"></p>
 <h2 id="一览"><a href="#一览" class="headerlink" title="一览"></a>一览</h2><p>低功耗无线蓝牙技术依托于蓝牙4.0规范，蓝牙4.0定义了一系列BLE设备之间的通讯协议。Core Bluetooth框架是对于BLE协议栈的抽象，这就是说他为你屏蔽了很多低级别协议的细节，使得开发者在开发和蓝牙交互的应用变得非常容易。</p>
 <p>###中央设备（Centrals）和外部设备（Peripherals）是Core Bluetooth的关键参与者</p>
@@ -177,73 +112,119 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-        </div>
-        <div class="post-reply">
-            
-            
-            <div id="disqus_thread" style="width: 80%; margin: 0 auto;"></div>
-                <script>
-
-                    /**
-                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                    /*
-                     var disqus_config = function () {
-                     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                     };
-                     */
-                    (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://bbc6bae9.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            
-        </div>
+      
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
-
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-      </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/13/1. Core Bluetooth Programming Guide - Introduction/" data-id="cj8tygdz00000njs2qu84bw4i" class="article-share-link">Partager</a>
+      
+      
+    </footer>
   </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
-
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
-    <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © 黄洪 2017
-        <br>
-        Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/13/iOS-CoreBluetooth-蓝牙开发全记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          iOS CoreBluetooth 蓝牙开发全记录
+        
       </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件开发/">硬件开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/硬件开发/" style="font-size: 10px;">硬件开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/13/iOS-CoreBluetooth-蓝牙开发全记录/">iOS CoreBluetooth 蓝牙开发全记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/13/1. Core Bluetooth Programming Guide - Introduction/">Core Bluetooth Programming Guide - Introduction 官方文档翻译</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 黄洪<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-<script src="/js/search_core.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 <script src="/js/script.js"></script>
 
+  </div>
 </body>
 </html>
