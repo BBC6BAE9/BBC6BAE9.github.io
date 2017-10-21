@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/21/代码管理工具之SVN的使用/index.html">
 <meta property="og:site_name" content="BBC6BAE9">
 <meta property="og:description" content="title: 代码管理工具之SVN的使用date: 2017-10-21 12:38:01tags: 目前，主流的两款源代码管理工具有SVN和Git，我将会写两篇博客对这两款工具的使用进行记录，以满足日常工作所需。对优劣和历史甚至是个人偏好不做讨论，SVN和Git只是让你日常开发更有效率的工具，不要太在意,更不要有任何优越感。 代码管理工具之Git的使用 Git精简版备忘录 代码管理工具之SVN的">
-<meta property="og:updated_time" content="2017-10-21T06:42:52.727Z">
+<meta property="og:updated_time" content="2017-10-21T06:48:39.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BBC6BAE9">
 <meta name="twitter:description" content="title: 代码管理工具之SVN的使用date: 2017-10-21 12:38:01tags: 目前，主流的两款源代码管理工具有SVN和Git，我将会写两篇博客对这两款工具的使用进行记录，以满足日常工作所需。对优劣和历史甚至是个人偏好不做讨论，SVN和Git只是让你日常开发更有效率的工具，不要太在意,更不要有任何优越感。 代码管理工具之Git的使用 Git精简版备忘录 代码管理工具之SVN的">
@@ -150,10 +150,11 @@ var themeMenus = {};
 <p>打开terminal 》CD 文件夹路径》SVN checkout 项目地址</p>
 <p>2.项目经理初始化项目</p>
 <p>·touch main.m 创建main.m</p>
+<p>·svn add main.m 将main.m添加到SVN的管理之下</p>
 <p>3.查看文件状态（是否是在SVN的管理之下，或者是否进行了修改二没有进行提交）</p>
 <p>*svn status</p>
 <p>所有文件状态如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">|显示        | 含义           |</div><div class="line">| ------------- |:-------------:|</div><div class="line">| &apos; &apos;           |  没有修改 |</div><div class="line">| &apos;A&apos;           |  被添加到本地代码仓库      |</div><div class="line">| &apos;C&apos;           |   冲突    |</div><div class="line">| &apos;D&apos;           |   冲突    |</div><div class="line">| &apos;I&apos;           |     被忽略   |</div><div class="line">| &apos;M&apos;           |    被修改   |</div><div class="line">| &apos;R&apos;           |   被替换    |</div><div class="line">| &apos;X&apos;           |   外部定义创建的版本目录    |</div><div class="line">| &apos;?&apos;           |    文件没有被添加到本地版本库内   |</div><div class="line">| &apos;!&apos;           |    文件丢失或者不完整（不是通过svn命令删除的文件）  |</div><div class="line">| &apos;~&apos;           |  受控文件被其他文件阻隔    |</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">|显示        | 含义           |</div><div class="line">| ------------- |:-------------:|</div><div class="line">| &apos; &apos;           |  没有修改                |</div><div class="line">| &apos;A&apos;           |  被添加到本地代码仓库      |</div><div class="line">| &apos;C&apos;           |   冲突    |</div><div class="line">| &apos;D&apos;           |   冲突    |</div><div class="line">| &apos;I&apos;           |     被忽略   |</div><div class="line">| &apos;M&apos;           |    被修改   |</div><div class="line">| &apos;R&apos;           |   被替换    |</div><div class="line">| &apos;X&apos;           |   外部定义创建的版本目录    |</div><div class="line">| &apos;?&apos;           |    文件没有被添加到本地版本库内   |</div><div class="line">| &apos;!&apos;           |    文件丢失或者不完整（不是通过svn命令删除的文件）  |</div><div class="line">| &apos;~&apos;           |  受控文件被其他文件阻隔    |</div><div class="line">| &apos;U&apos;           |  更新最新的代码到本地(本地有文件的情况下)       |</div><div class="line">| &apos;G&apos;           |  产生冲突后，更新操作去解决冲突，相当于进行合并  |</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="entry-meta entry-footer">
