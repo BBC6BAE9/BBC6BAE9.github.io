@@ -113,6 +113,62 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-UITableView最佳实践（未完结）"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/06/11/UITableView最佳实践（未完结）/" class="article-date">
+	  <time datetime="2018-06-10T16:04:32.317Z" itemprop="datePublished">June 11, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="UITableView最佳实践（未完结）"><a href="#UITableView最佳实践（未完结）" class="headerlink" title="UITableView最佳实践（未完结）"></a>UITableView最佳实践（未完结）</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p>我会在最近的一段时间里将自己整理的关于优化UItableView的只是在这个地方做一个记录…（未完成，暂时不建议观看）</p>
+<p>UITbaleView的优化主要从以下几个方面进行讲述</p>
+<ol>
+<li>关于UItableViewcell的优化你需要知道的事情</li>
+<li>Xcode自带调试工具Instrument的使用</li>
+<li>异步绘制</li>
+</ol>
+<h2 id="关于优化你需要注意的一些事情"><a href="#关于优化你需要注意的一些事情" class="headerlink" title="关于优化你需要注意的一些事情"></a>关于优化你需要注意的一些事情</h2><p>1.正确的使用UITableViewCell的重用机制</p>
+<p>众所周之，UITableView只会加载一屏幕或者比一个屏幕稍微多一些的cell，当cell离开屏幕的时候，他会被放到一个重用池里，当重用池中有cell的时候就从这个池子中去取，若是没有可用的，才会重新创建。这种极致极大的减少了内存的开销。</p>
+<p>插入代码段方法：英文输入法下，输入一对<figure class="highlight plain"><figcaption><span>，然后把代码段黏贴到它们之间，就ok了。例如下面，是不是美美哒</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```objective-c</div><div class="line"></div><div class="line">    // 一种古老的写法</div><div class="line">    /*</div><div class="line">    static NSString *cellID = @&quot;Cell&quot;;</div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];</div><div class="line">    if (!cell) &#123;</div><div class="line">        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];</div><div class="line">        //cell 初始化</div><div class="line">    &#125;</div><div class="line">    // cell 设置数据</div><div class="line">    return cell;</div><div class="line">     */</div><div class="line">    </div><div class="line">    //注册cell</div><div class="line">    [tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@&quot;cell&quot;];</div><div class="line">    //获取cell</div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot;];</div><div class="line">    MomentLayout *layout = self.momentsLayoutArr[indexPath.row];</div><div class="line">    cell.textLabel.text = layout.moment.name;</div><div class="line">    return cell;</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>提前计算好高度以及布局</p>
+<p>网络请求完成以后我们我们不仅需要把json中的字典转换成模型，还需要把新建一个layout的模型，里面不仅包含数据，还包含我们根据model计算出的布局信息，具体的例子请参考博客的另一篇文章：<a href="http://www.baidu.com/&quot; 百度一下&quot;" target="_blank" rel="external">一个UITableView缓存cell高度的最佳实践</a></p>
+</li>
+</ol>
+<ol>
+<li><p>尽量减少的cell里面子视图subView的层级</p>
+</li>
+<li><p>不要使用cornerRadius裁切圆角</p>
+</li>
+<li><p>不要动态的添加和移除视图，使用hidden来解决</p>
+</li>
+<li><p>栅格化，栅格化操作会大幅度提高的表哥滑动的流畅度，但是相应的回影响GPU的性能，通常来说做到上面几点就基本上可以把UItableView滑动的帧数控制在50fps之上，这歌参数代表了很流畅的动画效果</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-黄洪的个人简历"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -549,6 +605,18 @@ var themeMenus = {};
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/06/11/UITableView最佳实践（未完结）/">(no title)</a></h6>
+              <span>June 11, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/05/20/黄洪的个人简历/">黄洪的个人简历</a></h6>
               <span>May 20, 2018</span>
             </div>
@@ -623,7 +691,7 @@ var themeMenus = {};
     <h3 class="widget-title">Archiv</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
