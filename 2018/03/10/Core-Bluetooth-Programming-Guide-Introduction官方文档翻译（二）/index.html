@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Core Bluetooth Programming Guide - Introduction官方文档翻译（二） - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2018/03/10/Core-Bluetooth-Programming-Guide-Introduction官方文档翻译（二）/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>Core Bluetooth Programming Guide - Introduction官方文档翻译（二）</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 黄洪 on
+                            2018-03-10
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BBC6BAE9</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>官方文档地址:  <a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257-CH1-SW1" target="_blank" rel="external">Core Bluetooth Programming Guide</a></p>
+<h1 id="Core-Bluetooth-概述"><a href="#Core-Bluetooth-概述" class="headerlink" title="Core Bluetooth 概述"></a>Core Bluetooth 概述</h1><p>Core Bluetooth框架让你的iOS和Mac应用和低功耗蓝牙设备进行通讯，例如，你的设备可以发现，浏览，与BLE外部设备进行交互，例如心律仪，电子温度控制器，甚至是iOS设备。</p>
+<p>Core Bluetooth框架是使用BLE设备时对于蓝牙4.0标准的抽象。这就是说，它为你屏蔽了许多底层标准的细节，让你开发与BLE设备交互的App时更加容易。因为这个框架是基于这一标准，标准中的一些概念和专业术语依然被采用。这章为你介绍了一些专业术语和概念，而且这些都是在你使用Core Bluetooth进行开发之前需要知道的。</p>
+<p><strong>重要:</strong> iOS 10之后的iOS应用必须在<code>Info.plist</code>文件中必须添加<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW20" target="_blank" rel="external">NSBluetoothPeripheralUsageDescription</a>如果你不写的话，你的App就会崩溃。</p>
+<p>An iOS app linked on or after iOS 10.0 must include in its <code>Info.plist</code> file the usage description keys for the types of data it needs to access or it will crash. To access Bluetooth peripheral data specifically, it must include <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW20" target="_blank" rel="external">NSBluetoothPeripheralUsageDescription</a>. 谁帮我翻译一下这段(≧Д≦)</p>
+<h2 id="中央设备、外部设备和他们在蓝牙通信中扮演的角色"><a href="#中央设备、外部设备和他们在蓝牙通信中扮演的角色" class="headerlink" title="中央设备、外部设备和他们在蓝牙通信中扮演的角色"></a>中央设备、外部设备和他们在蓝牙通信中扮演的角色</h2><p>在蓝牙通讯中有两个主要的角色：中心设备和外部设备。基于传统的客户端-服务器架构，一个外部设备通常会有一些其他设备需要的数据。中心设备通常使用外部设备提供的数据去完成一些特定的任务，如图1-1所示，例如，一个心率仪有一些有用的数据，这些数据对Mac和iOS应用可能需要把这些数据以一种有好的方式显示出来。</p>
+<p><strong>Figure 1-1</strong>  Central and peripheral devices 中心设备和外部设备<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/CBDevices1_2x.png" alt="img"></p>
+<h3 id="中央设备发现并且连接正在广告（advertising-信息更新时以指定的间隔发出）的外部设备"><a href="#中央设备发现并且连接正在广告（advertising-信息更新时以指定的间隔发出）的外部设备" class="headerlink" title="中央设备发现并且连接正在广告（advertising: 信息更新时以指定的间隔发出）的外部设备"></a>中央设备发现并且连接正在广告（advertising: 信息更新时以指定的间隔发出）的外部设备</h3><p>外部设备会广播一些数据，这些数据一广告信息报的形式发送。一个广告信息包是一个相关的数据集，这里面可能包含一些外围设备提供的有用的信息，比如说外围设备的名字和他的主要功能。例如，一个电子温度调节器可能会提供房间的当前温度，在低功耗蓝牙中，广告是使外设能够被发现的主要方法。</p>
+<p>另一方面，中央设备能够扫描并且监听任何正在广告的外围设备，如图1-2所示，中央设备可以请求去连接任何被发现正在广告的外围设备</p>
+<p><strong>Figure 1-2</strong>  Advertising and discovery 广告（外围设备）和发现（中央设备）<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/AdvertisingAndDiscovery_2x.png" alt="img"></p>
+<h3 id="外设的数据是怎么结构化的"><a href="#外设的数据是怎么结构化的" class="headerlink" title="外设的数据是怎么结构化的"></a>外设的数据是怎么结构化的</h3><p>连接外围设备的目的是开始浏览外围设备并且与外围设备提供的数据进行的交互，在你能够做到之前，他能够帮助你理解外围设备的数据是怎么结构化的。</p>
+<p>外围设备可能包含一个或者多个Services(服务)或者提供一些关于信号强度信息的游泳信息。一个服务包含数据的集合，这些数据与设备（或者设备的局部）的特征和它完成的功能有紧密的关系。例如心率检测仪的传感器收集到数据，然后心率监测仪一个服务Service就可能会发送心率的数据。</p>
+<p>Services themselves are made up of either characteristics or included services (that is, references to other services). A <em>characteristic</em> provides further details about a peripheral’s service. For example, the heart rate service just described may contain one characteristic that describes the intended body location of the device’s heart rate sensor and another characteristic that transmits heart rate measurement data. Figure 1-3illustrates one possible structure of a heart rate monitor’s service and characteristics.</p>
+<p>这段翻译不出来，英文好的朋友帮帮忙啊<del>~</del><del>~</del>~~~</p>
+<p><strong>Figure 1-3</strong>  A peripheral’s service and characteristics<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/CBPeripheralData_Example_2x.png" alt="img"></p>
+<h3 id="中央设备查看和与外围设备数据交互"><a href="#中央设备查看和与外围设备数据交互" class="headerlink" title="中央设备查看和与外围设备数据交互"></a>中央设备查看和与外围设备数据交互</h3><p>当中心设备成功的与外围设备建立了连接，他可以发现外围设备提供的所有的service（服务）和charactoristic（特征值）（广告数据可能只是提供服务中数据的一小部分）</p>
+<p>中心设备也可以通过读写服务的特征值来和外围设备进行交互。例如，你的应用请求数码测温计当前室内温度，你也可以给温度调节器设置一个值来调整是内的温度。</p>
+<h2 id="中心设备外围设备和外围设备的数据是怎么呈现的"><a href="#中心设备外围设备和外围设备的数据是怎么呈现的" class="headerlink" title="中心设备外围设备和外围设备的数据是怎么呈现的"></a>中心设备外围设备和外围设备的数据是怎么呈现的</h2><p>中心设备外围设备和BLE的通讯数据以一种简单直接的方式映射（map）到Core Bluetooth框架中。</p>
+<h3 id="Objects-on-the-Central-Side"><a href="#Objects-on-the-Central-Side" class="headerlink" title="Objects on the Central Side"></a>Objects on the Central Side</h3><p>当你使用中心设备与远端的外围设备进行交互的时候，你在中心设备端进行一些蓝牙通讯的操作，除非是你设置的外围设备或者对中心设备的尽情反馈，其他大部分蓝牙通讯都发生在中心设备这部分。</p>
+<p>关于怎么在你的app上实现中心设备的角色，请参阅<a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonCentralRoleTasks/PerformingCommonCentralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH3-SW1" target="_blank" rel="external">Performing Common Central Role Tasks</a> 和 <a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/BestPracticesForInteractingWithARemotePeripheralDevice/BestPracticesForInteractingWithARemotePeripheralDevice.html#//apple_ref/doc/uid/TP40013257-CH6-SW1" target="_blank" rel="external">Best Practices for Interacting with a Remote Peripheral Device</a></p>
+<h4 id="本地中心设备和远程外围设备"><a href="#本地中心设备和远程外围设备" class="headerlink" title="本地中心设备和远程外围设备"></a>本地中心设备和远程外围设备</h4><p>在中心设备这一端，中心设备是用<code>CBCentralManager</code>类来体现的。这些类用来管理发现和连接远程的外围设备（外围设备是由<code>CBPeripheral</code>l来体现的），也包括扫描，发现，连接到广告设备。图1-4显示中心设备和外围设备是怎么在Core Bluetooth框架中展示的。</p>
+<p><strong>Figure 1-4</strong>  Core Bluetooth objects on the central side 中心设备端口的Core Bluetooth 类<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/CBObjects_CentralSide_2x.png" alt="img"></p>
+<h4 id="远程的外围设备由CBService和CBCharacteristic类来呈现"><a href="#远程的外围设备由CBService和CBCharacteristic类来呈现" class="headerlink" title="远程的外围设备由CBService和CBCharacteristic类来呈现"></a>远程的外围设备由CBService和CBCharacteristic类来呈现</h4><p>当你和远程外围设备（由 <code>CBPeripheral</code> 来呈现）进行数据交互的时候，其实你就是在处理它的服务（service）和特征值（characteristic）。在Core Bluetooth框架中，远程外围设备的服务是由 <code>CBService</code> 这个类来呈现的。相似的，特征值是由<code>CBCharacteristic</code>来呈现的。图1-5说明了远程外围设备的服务和特征值的基础结构。</p>
+<p><strong>Figure 1-5</strong>  A remote peripheral’s tree of services and characteristics<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/TreeOfServicesAndCharacteristics_Remote_2x.png" alt="img"></p>
+<h3 id="外围设备端的类"><a href="#外围设备端的类" class="headerlink" title="外围设备端的类"></a>外围设备端的类</h3><p>从macOS 10.9和iOS 6开始，Mac和iOS设备可以被当做BLE（低功耗蓝牙）设备，提供给其他包括Mac，iPhone和iPad在内的设备数据。当你把你的设备当做外围设备，你就在BLE设备通讯中执行一些作为外围设备的操作。</p>
+<h4 id="Local-Peripherals-and-Remote-Centrals"><a href="#Local-Peripherals-and-Remote-Centrals" class="headerlink" title="Local Peripherals and Remote Centrals"></a>Local Peripherals and Remote Centrals</h4><p>On the peripheral side, a local peripheral device is represented by a <code>CBPeripheralManager</code> object. These objects are used to manage published services within the local peripheral device’s database of services and characteristics and to advertise these services to remote central devices (represented by <code>CBCentral</code> objects). Peripheral manager objects are also used to respond to read and write requests from these remote centrals. Figure 1-6 shows how local peripherals and remote centrals are represented in the Core Bluetooth framework.</p>
+<p><strong>Figure 1-6</strong>  Core Bluetooth objects on the peripheral side<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/CBObjects_PeripheralSide_2x.png" alt="img"></p>
+<h4 id="本地外围设备的数据是由CBMutableService-和-CBMutableCharacteristic两个类呈现的"><a href="#本地外围设备的数据是由CBMutableService-和-CBMutableCharacteristic两个类呈现的" class="headerlink" title="本地外围设备的数据是由CBMutableService 和 CBMutableCharacteristic两个类呈现的"></a>本地外围设备的数据是由CBMutableService 和 CBMutableCharacteristic两个类呈现的</h4><p>When you are setting up and interacting with the data on a local peripheral (represented by a <code>CBPeripheralManager</code> object), you are dealing with mutable versions of its services and characteristics. In the Core Bluetooth framework, the services of a local peripheral are represented by <code>CBMutableService</code> objects. Similarly, the characteristics of a local peripheral’s service are represented by <code>CBMutableCharacteristic</code> objects. Figure 1-7 illustrates the basic structure of a local peripheral’s services and characteristics.</p>
+<p>当你在外围设备上</p>
+<p><strong>Figure 1-7</strong>  A local peripheral’s tree of services and characteristics<img src="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/Art/TreeOfServicesAndCharacteristics_Local_2x.png" alt="img"></p>
+<p>寻找更多让你的设备变成外围设备的信息，请参阅<a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonPeripheralRoleTasks/PerformingCommonPeripheralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH4-SW1" target="_blank" rel="external">Performing Common Peripheral Role Tasks</a> 和 <a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/BestPracticesForSettingUpYourIOSDeviceAsAPeripheral/BestPracticesForSettingUpYourIOSDeviceAsAPeripheral.html#//apple_ref/doc/uid/TP40013257-CH5-SW1" target="_blank" rel="external">Best Practices for Setting Up Your Local Device as a Peripheral</a>.</p>
+<h2 id="相关连接："><a href="#相关连接：" class="headerlink" title="相关连接："></a>相关连接：</h2><p><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257-CH1-SW1" target="_blank" rel="external">1. Introduction - 介绍</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW1" target="_blank" rel="external">2. Core Bluetooth Overview - 概述</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonCentralRoleTasks/PerformingCommonCentralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH3-SW1" target="_blank" rel="external">3. Performing Common Central Role Tasks - 执行通用中央设备的任务</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/PerformingCommonPeripheralRoleTasks/PerformingCommonPeripheralRoleTasks.html#//apple_ref/doc/uid/TP40013257-CH4-SW1" target="_blank" rel="external">4. Performing Common Peripheral Role Tasks - 执行通用外部设备的任务</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1" target="_blank" rel="external">5. Core Bluetooth Background Processing for iOS Apps - iOS App 使用Core Bluetooth时的后台模式的处理</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/BestPracticesForInteractingWithARemotePeripheralDevice/BestPracticesForInteractingWithARemotePeripheralDevice.html#//apple_ref/doc/uid/TP40013257-CH6-SW1" target="_blank" rel="external">6. Best Practices for Interacting with a Remote Peripheral Device - 与远程外设交互的最佳实践</a><br><a href="https://developer.apple.com/library/content/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/BestPracticesForSettingUpYourIOSDeviceAsAPeripheral/BestPracticesForSettingUpYourIOSDeviceAsAPeripheral.html#//apple_ref/doc/uid/TP40013257-CH5-SW1" target="_blank" rel="external">7. Best Practices for Setting Up Your Local Device as a Peripheral - 作为外设建立起本地设备的最佳实践</a></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/05/20/黄洪的个人简历/" data-toggle="tooltip" data-placement="top" title="黄洪的个人简历">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/03/10/Core-Bluetooth-Programming-Guide-Introduction官方文档翻译（一）/" data-toggle="tooltip" data-placement="top" title="Core Bluetooth Programming Guide - Introduction官方文档翻译（一）">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 黄洪 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
